@@ -14,12 +14,16 @@ int main(void){
 			scanf("%1d%1d%1d%1d%1d",&n7,&n8,&n9,&n10,&n11);
 		printf("enter the final digit 1 number only : ");
 			scanf("%d",&n12);
+	
+        int total ,first_sum ,second_sum ,check_digit;
+                first_sum  = n1 + n3 + n5 + n7 + n9 + n11;
+                second_sum = n2 + n4 + n6 + n8 + n10;
+        total = (first_sum * 3) + second_sum;
+        --total;
+        total %= 10;
+        check_digit += 9 - total;
 
-	int total ,first_sum ,second_sum ,check_digit;
-		first_sum  = n1 + n3 + n5 + n7 + n9 + n11;
-		second_sum = n2 + n4 + n6 + n8 + n10;
-	total = (first_sum * 3) + second_sum;
-	check_digit = 9 - (total - 1) % 10;
+	
 		
 		printf("the check digit is : %d \n",check_digit);
 return 0; }
